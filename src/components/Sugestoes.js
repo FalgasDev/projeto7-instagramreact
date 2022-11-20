@@ -34,7 +34,7 @@ export default function Sugestoes() {
 				<div>Ver tudo</div>
 			</div>
 			{sugestoes.map((s) => (
-				<Sugestao image={s.image} name={s.name} reason={s.reason} />
+				<Sugestao key={s.name} image={s.image} name={s.name} reason={s.reason} />
 			))}
 		</div>
 	);

@@ -24,6 +24,7 @@ export default function Posts() {
 		<div class="posts">
 			{posts.map((p) => (
 				<Post
+					key={p.userName}
 					userImage={p.userImage}
 					userName={p.userName}
 					image={p.image}
