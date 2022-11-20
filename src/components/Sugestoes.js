@@ -44,7 +44,7 @@ function Sugestao(props) {
 	return (
 		<div class="sugestao">
 			<div class="usuario">
-				<img src={props.image} />
+				<img src={props.image} alt=''/>
 				<div class="texto">
 					<div class="nome">{props.name}</div>
 					<div class="razao">{props.reason}</div>
