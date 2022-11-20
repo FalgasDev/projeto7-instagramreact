@@ -237,6 +237,10 @@ body {
   color: #8E8E8E;
 }
 
+.sidebar > .usuario .texto span {
+  display: flex;
+}
+
 .sidebar > .usuario .texto strong {
   font-weight: 500;
   color: #262626;
