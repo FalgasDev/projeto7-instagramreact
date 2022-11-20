@@ -41,6 +41,7 @@ function Post(props) {
 	const [heart, setHeart] = useState('heart-outline');
 	const [corHeart, setCorHeart] = useState('');
 	const [totalLikes, setTotalLikes] = useState(props.totalLikes);
+	const [animacaoLike, setAnimacaoLike] = useState('coracao-escondido')
 
 	function favoritar() {
 		if (bookmark === 'bookmark') {
@@ -64,10 +65,14 @@ function Post(props) {
 
 	function imagemClick() {
 		if (heart === 'heart') {
+			setAnimacaoLike('coracao-animado')
+			setTimeout(() => setAnimacaoLike('coracao-escondido'), 500)
 		} else {
 			setHeart('heart');
 			setCorHeart('vermelho');
 			setTotalLikes(totalLikes + 1);
+			setAnimacaoLike('coracao-animado')
+			setTimeout(() => setAnimacaoLike('coracao-escondido'), 500)
 		}
 	}
 
@@ -84,7 +89,8 @@ function Post(props) {
 			</div>
 
 			<div class="conteudo">
-				<img data-test="post-image" onClick={imagemClick} src={props.image} alt=''/>
+				<img data-test="post-image" onDoubleClick={imagemClick} src={props.image} alt=''/>
+				<ion-icon name='heart' class={animacaoLike}></ion-icon>
 			</div>
 
 			<div class="fundo">
